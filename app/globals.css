@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-rounded, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+/* Subtle animated gradient for the hero */
+.hero-gradient {
+  background: rgb(255, 255, 255);
+}
+
+/* Card gradients inspired by the screenshot */
+.card-blue {
+  background: linear-gradient(160deg, #60a5fa 0%, #22d3ee 100%);
+}
+
+.card-purple {
+  background: linear-gradient(160deg, #c084fc 0%, #818cf8 100%);
+}
+
+.card-orange {
+  background: linear-gradient(160deg, #fbbf24 0%, #fb7185 100%);
+}
+
+.card-green {
+  background: linear-gradient(160deg, #34d399 0%, #22c55e 100%);
+}
+
+/* Nice scrollbar for the expanded view */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(248, 248, 248, 0.15);
+  border-radius: 8px;
+}
+
+::selection {
+  background: #c7d2fe;
+  /* any visible highlight */
+  color: #111827;
+  /* dark text while selected */
+}
+
+::-moz-selection {
+  background: #c7d2fe;
+  color: #111827;
+}
+
+@layer base {
+  ::selection {
+    background: #c7d2fe;
+    color: #111827;
+  }
+
+  ::-moz-selection {
+    background: #c7d2fe;
+    color: #111827;
+  }
+}
+
+@layer components {
+  ::selection {
+    background: #c7d2fe;
+    color: #111827;
+  }
+
+  ::-moz-selection {
+    background: #c7d2fe;
+    color: #111827;
+  }
+}
+
+@layer utilities {
+  ::selection {
+    background: #c7d2fe;
+    color: #111827;
+  }
+
+  ::-moz-selection {
+    background: #c7d2fe;
+    color: #111827;
+  }
+}
