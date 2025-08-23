@@ -51,6 +51,11 @@ export default function HomePage() {
             <EmailForm />
           </motion.div>
 
+          <motion.h2
+            className="mx-auto mt-20 max-w-3xl text-3xl sm:text-4xl font-extrabold tracking-tight text-black"
+          >
+            {t('featuresTitle')}
+          </motion.h2>
           <FeatureGrid />
 
           <FAQ />

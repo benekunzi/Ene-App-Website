@@ -66,10 +66,6 @@ export default function EmailForm() {
   return (
     <motion.form
       onSubmit={onSubmit}
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
       className="w-full max-w-xl mx-auto mb-16 mt-16"
       aria-label="Join the waitlist"
     >
