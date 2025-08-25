@@ -58,11 +58,11 @@ const resources = {
             faqTitle: "Frequently Asked Questions",
             faqDescription: "Tap a question to see the answer.",
             faqQuestions: [
-                { q: 'What is the app about?', a: 'It helps you analyze QR codes, images, PDFs, and text with a clean workflow.' },
-                { q: 'When will the app launch?', a: 'We are polishing the experience now. Join the waitlist and you will be the first to know.' },
-                { q: 'Will it be free?', a: 'We will offer a generous free tier and a pro plan for advanced users.' },
-                { q: 'What platforms will it support?', a: 'We start on web and iOS, with Android coming soon after.' },
-                { q: 'How do you handle privacy?', a: 'Your data remains yours. We use encryption, minimize retention, and never sell your information.' },
+                { q: 'What is Ene?', a: 'Ene is your personal protector to shield you from spam and phishing messages. It analyzes your messages and immediately shows you if it is a genuine message.' },
+                { q: 'What can I analyze?', a: 'All known phishing and scam formats are supported. You can check QR codes, and have your WhatsApp and SMS messages analyzed. Analyzing emails and reading PDF documents is also no problem.' },
+                { q: 'What happens to my data?', a: 'The data contained in your scans remains securely with you. We do not store any data.' },
+                { q: 'Can I use the app for free?', a: 'Yes, there is a free trial version to test the app extensively. Afterwards, the app has a monthly/yearly cost.' },
+                { q: 'How much does the app cost?', a: 'The prices are still being determined, but we will offer a fair pricing model based on your needs.' },
             ],
             featureCards: [
                 { title: 'QR Code', subtitle: 'Scan a QR code to instantly check if it’s safe.', gradient: 'card-blue', icon: 'QrCode', videoUrl: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4' },
@@ -94,11 +94,11 @@ const resources = {
             faqTitle: "Preguntas Frecuentes",
             faqDescription: "Toca una pregunta para ver la respuesta.",
             faqQuestions: [
-                { q: '¿De qué trata la aplicación?', a: 'Ayuda a analizar códigos QR, imágenes, PDFs y texto con un flujo de trabajo limpio.' },
-                { q: '¿Cuándo se lanzará la aplicación?', a: 'Estamos puliendo la experiencia ahora. Únete a la lista de espera y serás el primero en saberlo.' },
-                { q: '¿Será gratuita?', a: 'Ofreceremos un nivel gratuito generoso y un plan pro para usuarios avanzados.' },
-                { q: '¿Qué plataformas admitirá?', a: 'Comenzamos en web y iOS, con Android llegando poco después.' },
-                { q: '¿Cómo manejan la privacidad?', a: 'Tus datos siguen siendo tuyos. Usamos cifrado, minimizamos la retención y nunca vendemos tu información.' },
+                { q: '¿Qué es Ene?', a: 'Ene es tu protector personal para protegerte de mensajes de spam y phishing. Analiza tus mensajes y te muestra inmediatamente si es un mensaje genuino.' },
+                { q: '¿Qué puedo analizar?', a: 'Se admiten todos los formatos conocidos de phishing y estafa. Puedes verificar códigos QR y hacer que se analicen tus mensajes de WhatsApp y SMS. Analizar correos electrónicos y leer documentos PDF tampoco es un problema.' },
+                { q: '¿Qué pasa con mis datos?', a: 'Los datos contenidos en tus escaneos permanecen seguros contigo. No almacenamos ningún dato.' },
+                { q: '¿Puedo usar la aplicación gratis?', a: 'Sí, hay una versión de prueba gratuita para probar la aplicación extensamente. Después, la aplicación tiene un costo mensual/anual.' },
+                { q: '¿Cuánto cuesta la aplicación?', a: 'Los precios aún se están determinando, pero ofreceremos un modelo de precios justo basado en tus necesidades.' },
             ],
             featureCards: [
                 { title: 'Código QR', subtitle: 'Escanea un código QR para verificar al instante si es seguro.', gradient: 'card-blue', icon: 'QrCode', videoUrl: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4' },
