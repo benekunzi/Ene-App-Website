@@ -35,6 +35,8 @@ const resources = {
                 { title: 'Text', subtitle: 'Kopiere Nachrichten und URLs direkt in die App, um sie zu überprüfen.', gradient: 'card-green', icon: 'AlignLeft', videoUrl: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4' },
             ],
             footerText: "Ene-App. Alle Rechte vorbehalten.",
+            privacyPolicy: "Datenschutz",
+            termsAndConditions: "AGB",
             thanks: {
                 title: "Du bist jetzt auf der Liste 🎉",
                 description: "Wir halten dich auf dem Laufenden und informieren dich, sobald wir starten.",
@@ -71,6 +73,8 @@ const resources = {
                 { title: 'Text', subtitle: 'Copy messages and URLs directly into the app for verification.', gradient: 'card-green', icon: 'AlignLeft', videoUrl: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4' },
             ],
             footerText: "Ene-App. All rights reserved.",
+            privacyPolicy: "Privacy Policy",
+            termsAndConditions: "Terms and Conditions",
             thanks: {
                 title: "You’re on the list 🎉",
                 description: "Thanks for signing up. We’ll email you as soon as we launch.",
@@ -107,6 +111,8 @@ const resources = {
                 { title: 'Texto', subtitle: 'Copia mensajes y URLs directamente en la aplicación para verificarlos.', gradient: 'card-green', icon: 'AlignLeft', videoUrl: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4' },
             ],
             footerText: "Ene-App. Todos los derechos reservados.",
+            privacyPolicy: "Política de Privacidad",
+            termsAndConditions: "Términos y Condiciones",
             thanks: {
                 title: "¡Estás en la lista! 🎉",
                 description: "Gracias por registrarte. Te enviaremos un correo electrónico tan pronto como lancemos.",

@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useTranslation } from 'react-i18next';
 import "@/app/utils/i18n";
+import Link from "next/link";
 
 export default function HomePage() {
 
@@ -24,7 +25,7 @@ export default function HomePage() {
           <Logo />
           <LanguageSwitcher
             language={i18n.language}
-            setLanguage={(lang) => i18n.changeLanguage(lang)}
+            setLanguage={(lang: string) => i18n.changeLanguage(lang)}
           />
         </header>
 
@@ -63,6 +64,14 @@ export default function HomePage() {
 
         <footer className="mt-24 text-center text-xs text-black/50">
           © {new Date().getFullYear()} {t('footerText')}
+          <div className="flex justify-center space-x-4 mt-2">
+            <Link href={"/privacy-policy" as any} className="hover:underline">
+              {t('privacyPolicy')}
+            </Link>
+            <Link href={"/terms-and-conditions" as any} className="hover:underline">
+              {t('termsAndConditions')}
+            </Link>
+          </div>
         </footer>
       </div>
     </main>
