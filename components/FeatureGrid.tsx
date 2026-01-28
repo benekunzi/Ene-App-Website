@@ -54,11 +54,28 @@ export default function FeatureGrid() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const cards: Card[] = baseCards.map((c, idx) => ({ ...c, id: `${unique}-${idx}` }));
   const activeCard = activeId ? cards.find((card) => card.id === activeId) : null;
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    if (activeId) {
+      const timer = setTimeout(() => {
+        setShowVideo(true);
+      }, 300);
+      return () => clearTimeout(timer);
+    } else {
+      setShowVideo(false);
+    }
+  }, [activeId]);
+
+  const handleClose = () => {
+    setShowVideo(false);
+    setTimeout(() => setActiveId(null), 0);
+  };
 
   // Close on ESC
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') setActiveId(null);
+      if (e.key === 'Escape') handleClose();
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
@@ -101,7 +118,7 @@ export default function FeatureGrid() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setActiveId(null)}
+            onClick={handleClose}
           />
         )}
       </AnimatePresence>
@@ -115,31 +132,48 @@ export default function FeatureGrid() {
               "fixed inset-4 sm:inset-10 z-50 rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10",
               activeCard.gradient
             )}
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ type: 'spring', stiffness: 180, damping: 20 }}
+            transition={{ type: 'spring', stiffness: 250, damping: 25, mass: 1 }}
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setActiveId(null)}
-              aria-label="Close"
-              className="absolute right-4 top-4 z-10 rounded-full p-2 bg-white/10 hover:bg-white/20 transition"
-            >
-              <X className="h-5 w-5 text-white" />
-            </button>
             <div className="grid h-full grid-rows-[auto,1fr]">
-              <div className="p-5 sm:p-6 border-b border-white/10">
+              <motion.button
+                onClick={handleClose}
+                aria-label="Close"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, transition: { duration: 0.05 } }}
+                transition={{ duration: 0.2, delay: 0.1 }}
+                className="absolute right-4 top-4 z-10 rounded-full p-2 bg-white/10 hover:bg-white/20 transition"
+              >
+                <X className="h-5 w-5 text-white" />
+              </motion.button>
+
+              <motion.div
+                className="p-5 sm:p-6 border-b border-white/10"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, transition: { duration: 0.05 } }}
+                transition={{ duration: 0.2, delay: 0.1 }}
+              >
                 <h3 className="text-lg font-semibold text-white">Preview</h3>
-              </div>
+              </motion.div>
+
               <div className="p-5 sm:p-8 overflow-auto flex items-center justify-center">
-                <video
-                  className="w-full max-w-3xl rounded-xl shadow-glow"
-                  src={activeCard.videoUrl}
-                  controls
-                  autoPlay
-                  playsInline
-                />
+                {showVideo && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="w-full max-w-3xl"
+                  >
+                    <video
+                      className="w-full rounded-xl shadow-glow"
+                      src={activeCard.videoUrl}
+                      controls
+                      autoPlay
+                      playsInline
+                    />
+                  </motion.div>
+                )}
               </div>
             </div>
           </motion.div>
