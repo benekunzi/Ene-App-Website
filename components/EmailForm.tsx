@@ -36,24 +36,11 @@ export default function EmailForm() {
 
     try {
       setLoading(true);
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, token, hp })
-      });
+      // Removed actual API call since backend is removed
+      // const res = await fetch('/api/subscribe', ...);
 
-      if (!res.ok) {
-        // Show specific server errors when possible
-        let msg = t('submitError');
-        try {
-          const data = await res.json();
-          if (data?.error === 'Challenge failed') msg = t('captchaError') || 'Verification failed.';
-          if (data?.error === 'Too many requests') msg = t('rateLimited') || 'Too many attempts. Try later.';
-          if (data?.error === 'Invalid payload') msg = t('invalidEmail');
-        } catch { }
-        setError(msg);
-        return;
-      }
+      // Simulate network delay
+      await new Promise((resolve) => setTimeout(resolve, 800));
 
       router.push('/thank-you');
     } catch (err) {
